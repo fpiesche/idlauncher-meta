@@ -59,8 +59,8 @@
       "properties": {
         "type": {
           "type": "string",
-          "description": "An identifier of whether the file is an iWAD (i.e. can run by itself) or pWAD (i.e. requires an iWAD to function).",
-          "pattern": "iwad|pwad"
+          "description": "An identifier of whether the file is an iWAD (i.e. can run by itself), pWAD (i.e. requires an iWAD to function) or a DEHacked patch.",
+          "pattern": "iwad|pwad|dehacked"
         },
         "requires": {
           "type": "object",
@@ -84,17 +84,49 @@
                   "pattern": "^[a-fA-F0-9]{64}$"
                 }
               ]
-            }
+            },
+            "dehacked": {
+              "type": "array",
+              "description": "A list of SHA256 checksums of DEHacked patches that are required for this file.",
+              "items": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-fA-F0-9]{64}$"
+                }
+              ]
+            },
           },
           "required": [
             "iwads",
-            "pwads"
+            "pwads",
+            "dehacked"
           ]
-        }
+        },
+        "engine": {
+          "type": "string",
+          "description": "An identifier of the baseline engine required for this file.",
+          "pattern": "doom|doom2|boom|legacy|gzdoom"
+        },
+        "launch_commands": {
+          "type": "array",
+          "description": "A list of strings to be passed to the engine as launch commands.",
+          "items": [
+            {
+              "type": "string",
+            }
+          ]
+        },
+        "maps": {
+          "type": "string",
+          "description": "A string denoting which maps are covered by this project.",
+        },
       },
       "required": [
         "type",
-        "requires"
+        "requires",
+        "engine",
+        "launch_commands",
+        "maps"
       ]
     },
     "metadata": {
@@ -113,6 +145,11 @@
             }
           ]
         },
+        "date": {
+          "type": "string",
+          "description": "The release date of the project.",
+          "pattern": "^\d{4}-\d{2}-\d{2}$"
+        },
         "doomworld_id": {
           "type": "string",
           "description": "The Doomworld file ID for the project, if any."
@@ -130,13 +167,77 @@
           "description": "The version number of this particular file."
         }
       },
+      "modes": {
+        "type": "object",
+        "description": "An object describing which game modes are supported.",
+        "properties": {
+          "singleplayer": {
+            "type": "boolean",
+            "description": "Whether or not single-player mode is supported.",
+          },
+          "coop": {
+            "type": "boolean",
+            "description": "Whether or not co-operative multiplayer is supported.",
+          },
+          "deathmatch": {
+            "type": "boolean",
+            "description": "Whether or not deathmatch mode is supported.",
+          },
+          "other": {
+            "type": "string",
+            "description": "A description of any other game modes supported.",
+          },
+        },
+        "required": [
+          "singleplayer",
+          "coop",
+          "deathmatch",
+          "other"
+        ]
+      },
+      "difficulty": {
+        "type": "boolean",
+        "description": "Whether or not different difficulty modes are supported.",
+      },
+      "images": {
+        "type": "object",
+        "description": "A container for artwork to use for the file.",
+        "properties": {
+          "poster": {
+            "type": "string",
+            "description": "A base64 encoded version of vertical poster format artwork.",
+          },
+          "banner": {
+            "type": "string",
+            "description": "A base64 encoded version of horizontal banner format artwork.",
+          },
+          "logo": {
+            "type": "string",
+            "description": "A base64 encoded version of a logo for the project, ideally as a transparent PNG.",
+          },
+          "icon": {
+            "type": "string",
+            "description": "A base64 encoded version of icon artwork for the project.",
+          },
+        },
+        "required": [
+          "poster",
+          "banner",
+          "logo",
+          "icon"
+        ]
+      },
       "required": [
         "name",
         "authors",
+        "date",
         "links",
         "description",
         "version",
-        "doomworld_id"
+        "doomworld_id",
+        "modes",
+        "difficulty",
+        "images"
       ]
     }
   },
