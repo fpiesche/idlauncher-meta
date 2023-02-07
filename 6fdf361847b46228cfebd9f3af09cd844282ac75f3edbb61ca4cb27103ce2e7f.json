@@ -1,5 +1,5 @@
 {
-    "checksums": {
+    "hashes": {
         "sha256": ["6fdf361847b46228cfebd9f3af09cd844282ac75f3edbb61ca4cb27103ce2e7f"],
         "sha1": ["9b07b02ab3c275a6a7570c3f73cc20d63a0e3833"],
         "md5": ["c4fe9fd920207691a9f493668e0a2083"],
@@ -9,18 +9,36 @@
         "type": "iwad",
         "requires": {
             "iwads": [""],
-            "pwads": [""]
+            "pwads": [""],
+            "dehacked": [""]
         },
+        "engine": "",
+        "launch_commands": [],
+        "maps": ""
     },
     "metadata": {
         "name": "The Ultimate DOOM",
+        "description": "The base game file for The Ultimate DOOM.",
+        "version": "1.9ud",
         "authors": ["id Software"],
+        "date": "",
         "doomworld_id": "",
+        "modes": {
+            "singleplayer": true,
+            "coop": true,
+            "deathmatch": true,
+            "other": ""
+        },
+        "difficulty": true,
+        "images": {
+            "banner": "",
+            "poster": "",
+            "logo": "",
+            "icon": ""
+        },
         "links": {
             "website (archived)": "https://web.archive.org/web/20110208173222/http://www.idsoftware.com/games/doom/doom-ultimate/",
             "DoomWiki": "https://doomwiki.org/wiki/The_Ultimate_Doom"
-        },
-        "description": "The base game file for The Ultimate DOOM.",
-        "version": "1.9ud"
+        }
     }
 }
