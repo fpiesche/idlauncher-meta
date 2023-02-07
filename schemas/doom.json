@@ -1,0 +1,149 @@
+{
+  "$id": "https://github.com/fpiesche/idlauncher-meta/schemas/doom.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "idLauncher DOOM JSON metadata",
+  "type": "object",
+  "properties": {
+    "hashes": {
+      "type": "object",
+      "description": "A container for cryptographic hashes for the file.",
+      "properties": {
+        "sha256": {
+          "type": "array",
+          "description": "A list of SHA-256 hashes the file is known to have.",
+          "items": [
+            {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{64}$"
+            }
+          ]
+        },
+        "sha1": {
+          "type": "array",
+          "description": "A list of SHA-1 hashes the file is known to have.",
+          "items": [
+            {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{40}$"
+            }
+          ]
+        },
+        "md5": {
+          "type": "array",
+          "description": "A list of MD5 hashes the file is known to have.",
+          "items": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{32}$"
+            }
+          ]
+        },
+        "crc32": {
+          "type": "array",
+          "description": "A list of CRC32 hashes the file is known to have.",
+          "items": [
+            {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{8}$"
+            }
+          ]
+        }
+      },
+      "required": [
+        "sha256"
+      ]
+    },
+    "loader_info": {
+      "type": "object",
+      "description": "Metadata to help loaders (source ports, launchers etc) handle the file.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "An identifier of whether the file is an iWAD (i.e. can run by itself) or pWAD (i.e. requires an iWAD to function).",
+          "pattern": "iwad|pwad"
+        },
+        "requires": {
+          "type": "object",
+          "properties": {
+            "iwads": {
+              "type": "array",
+              "description": "A list of SHA256 checksums of iWADs that will work as a base for this file.",
+              "items": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-fA-F0-9]{64}$"
+                }
+              ]
+            },
+            "pwads": {
+              "type": "array",
+              "description": "A list of SHA256 checksums of pWADs that are required for this file.",
+              "items": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-fA-F0-9]{64}$"
+                }
+              ]
+            }
+          },
+          "required": [
+            "iwads",
+            "pwads"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "requires"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the project."
+        },
+        "authors": {
+          "type": "array",
+          "description": "A free-text list of authors for the project.",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "doomworld_id": {
+          "type": "string",
+          "description": "The Doomworld file ID for the project, if any."
+        },
+        "links": {
+          "type": "object",
+          "description": "A mapping of link descriptions to URLs relating to the project."
+        },
+        "description": {
+          "type": "string",
+          "description": "A free-text description of the project."
+        },
+        "version": {
+          "type": "string",
+          "description": "The version number of this particular file."
+        }
+      },
+      "required": [
+        "name",
+        "authors",
+        "links",
+        "description",
+        "version",
+        "doomworld_id"
+      ]
+    }
+  },
+  "required": [
+    "checksums",
+    "loader_info",
+    "metadata"
+  ]
+}
+
