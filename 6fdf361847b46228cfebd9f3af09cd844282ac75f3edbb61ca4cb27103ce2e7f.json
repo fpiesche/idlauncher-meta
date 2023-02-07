@@ -1,14 +1,26 @@
 {
     "checksums": {
-        "sha256": "6fdf361847b46228cfebd9f3af09cd844282ac75f3edbb61ca4cb27103ce2e7f",
-        "md5": "c4fe9fd920207691a9f493668e0a2083",
-        "sha1": "9b07b02ab3c275a6a7570c3f73cc20d63a0e3833",
-        "crc32": "bf0eaac0"
+        "sha256": ["6fdf361847b46228cfebd9f3af09cd844282ac75f3edbb61ca4cb27103ce2e7f"],
+        "sha1": ["9b07b02ab3c275a6a7570c3f73cc20d63a0e3833"],
+        "md5": ["c4fe9fd920207691a9f493668e0a2083"],
+        "crc32": ["bf0eaac0"]
     },
-    "type": "iwad",
-    "requires": [],
-    "name": "The Ultimate DOOM",
-    "links": {},
-    "description": "The base game file for The Ultimate DOOM.",
-    "version": "1.9ud"
+    "loader_info": {
+        "type": "iwad",
+        "requires": {
+            "iwads": [""],
+            "pwads": [""]
+        },
+    },
+    "metadata": {
+        "name": "The Ultimate DOOM",
+        "authors": ["id Software"],
+        "doomworld_id": "",
+        "links": {
+            "website (archived)": "https://web.archive.org/web/20110208173222/http://www.idsoftware.com/games/doom/doom-ultimate/",
+            "DoomWiki": "https://doomwiki.org/wiki/The_Ultimate_Doom"
+        },
+        "description": "The base game file for The Ultimate DOOM.",
+        "version": "1.9ud"
+    }
 }
