@@ -94,7 +94,7 @@
                   "pattern": "^[a-fA-F0-9]{64}$"
                 }
               ]
-            },
+            }
           },
           "required": [
             "iwads",
@@ -112,7 +112,7 @@
           "description": "A list of strings to be passed to the engine as launch commands.",
           "items": [
             {
-              "type": "string",
+              "type": "string"
             }
           ]
         },
@@ -121,9 +121,10 @@
           "description": "A list of strings of internal map names.",
           "items": [
             {
-              "type": "string",
+              "type": "string"
             }
-        },
+          ]
+        }
       },
       "required": [
         "type",
@@ -152,7 +153,7 @@
         "date": {
           "type": "string",
           "description": "The release date of the project.",
-          "pattern": "^\d{4}-\d{2}-\d{2}$"
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
         },
         "doomworld_id": {
           "type": "string",
@@ -177,20 +178,20 @@
         "properties": {
           "singleplayer": {
             "type": "boolean",
-            "description": "Whether or not single-player mode is supported.",
+            "description": "Whether or not single-player mode is supported."
           },
           "coop": {
             "type": "boolean",
-            "description": "Whether or not co-operative multiplayer is supported.",
+            "description": "Whether or not co-operative multiplayer is supported."
           },
           "deathmatch": {
             "type": "boolean",
-            "description": "Whether or not deathmatch mode is supported.",
+            "description": "Whether or not deathmatch mode is supported."
           },
           "other": {
             "type": "string",
-            "description": "A description of any other game modes supported.",
-          },
+            "description": "A description of any other game modes supported."
+          }
         },
         "required": [
           "singleplayer",
@@ -201,7 +202,7 @@
       },
       "difficulty": {
         "type": "boolean",
-        "description": "Whether or not different difficulty modes are supported.",
+        "description": "Whether or not different difficulty modes are supported."
       },
       "images": {
         "type": "object",
@@ -209,20 +210,20 @@
         "properties": {
           "poster": {
             "type": "string",
-            "description": "A base64 encoded version of vertical poster format artwork.",
+            "description": "A base64 encoded version of vertical poster format artwork."
           },
           "banner": {
             "type": "string",
-            "description": "A base64 encoded version of horizontal banner format artwork.",
+            "description": "A base64 encoded version of horizontal banner format artwork."
           },
           "logo": {
             "type": "string",
-            "description": "A base64 encoded version of a logo for the project, ideally as a transparent PNG.",
+            "description": "A base64 encoded version of a logo for the project, ideally as a transparent PNG."
           },
           "icon": {
             "type": "string",
-            "description": "A base64 encoded version of icon artwork for the project.",
-          },
+            "description": "A base64 encoded version of icon artwork for the project."
+          }
         },
         "required": [
           "poster",
