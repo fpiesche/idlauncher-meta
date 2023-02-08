@@ -28,7 +28,7 @@
         "description": "The base game file for The Ultimate DOOM.",
         "version": "1.9ud",
         "authors": ["id Software"],
-        "date": "",
+        "date": "1995-04-30",
         "doomworld_id": "",
         "modes": {
             "singleplayer": true,
