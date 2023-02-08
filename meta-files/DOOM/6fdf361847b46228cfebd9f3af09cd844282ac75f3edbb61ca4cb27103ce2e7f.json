@@ -9,9 +9,9 @@
     "loader_info": {
         "type": "iwad",
         "requires": {
-            "iwads": [""],
-            "pwads": [""],
-            "dehacked": [""]
+            "iwads": [],
+            "pwads": [],
+            "dehacked": []
         },
         "engine": "doom",
         "launch_commands": [],
