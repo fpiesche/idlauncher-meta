@@ -1,0 +1,33 @@
+name: learn-github-actions
+
+on:
+- pull_request
+- workflow_dispatch
+
+jobs:
+  validate-json-schemas:
+    name: Validate JSON schemas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - run: pip install -y check-jsonschema
+      - run: check-jsonschema --schemafile https://json-schema.org/draft/2019-09/schema ./schemas/*.json
+
+  validate-doom-metafiles:
+    name: Validate metadata for DOOM WADs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - run: pip install -y check-jsonschema
+      - run: check-jsonschema --schemafile ./schemas/doom.json ./meta-files/doom/*.json
+
+#  validate-quake-metafiles:
+#    name: Validate metadata for Quake mods
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#      - uses: actions/setup-python@v4
+#      - run: pip install -y check-jsonschema
+#      - run: check-jsonschema --schemafile ./schemas/quake.json ./meta-files/quake/*.json
