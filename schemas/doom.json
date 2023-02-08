@@ -117,8 +117,12 @@
           ]
         },
         "maps": {
-          "type": "string",
-          "description": "A string denoting which maps are covered by this project.",
+          "type": "array",
+          "description": "A list of strings of internal map names.",
+          "items": [
+            {
+              "type": "string",
+            }
         },
       },
       "required": [
