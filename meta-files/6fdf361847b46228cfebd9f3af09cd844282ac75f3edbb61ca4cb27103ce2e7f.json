@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/fpiesche/idlauncher-meta/main/schemas/doom.json",
     "hashes": {
         "sha256": ["6fdf361847b46228cfebd9f3af09cd844282ac75f3edbb61ca4cb27103ce2e7f"],
         "sha1": ["9b07b02ab3c275a6a7570c3f73cc20d63a0e3833"],
