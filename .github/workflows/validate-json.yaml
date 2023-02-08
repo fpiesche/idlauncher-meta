@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: JSON validation
 
 on:
 - pull_request
