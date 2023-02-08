@@ -71,7 +71,7 @@
               "items": [
                 {
                   "type": "string",
-                  "pattern": "^[a-fA-F0-9]{64}$"
+                  "pattern": "(^[a-fA-F0-9]{64}$)|(^$)"
                 }
               ]
             },
@@ -81,7 +81,7 @@
               "items": [
                 {
                   "type": "string",
-                  "pattern": "^[a-fA-F0-9]{64}$"
+                  "pattern": "(^[a-fA-F0-9]{64}$)|(^$)"
                 }
               ]
             },
@@ -91,7 +91,7 @@
               "items": [
                 {
                   "type": "string",
-                  "pattern": "^[a-fA-F0-9]{64}$"
+                  "pattern": "(^[a-fA-F0-9]{64}$)|(^$)"
                 }
               ]
             }
@@ -247,7 +247,7 @@
     }
   },
   "required": [
-    "checksums",
+    "hashes",
     "loader_info",
     "metadata"
   ]
