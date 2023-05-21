@@ -1,0 +1,54 @@
+{
+    "$schema": "https://raw.githubusercontent.com/fpiesche/idlauncher-meta/main/schemas/doom.json",
+    "hashes": {
+        "sha256": ["1fcb14d46a3f0677ed65f70ab7d3c1b1d27120042958e4d567b36fe154827f89"],
+        "sha1": ["b0b333484732ef8b1a87e099a97db6304243e4eb"],
+        "md5": ["1432292362182cd3b5e86b75e55ac9bf"],
+        "crc32": ["f82be732"]
+    },
+    "loader_info": {
+        "type": "iwad",
+        "requires": {
+            "iwads": ["10d67824b11025ddd9198e8cfc87ca335ee6e2d3e63af4180fa9b8a471893255"],
+            "pwads": [],
+            "dehacked": []
+        },
+        "engine": "zdoom",
+        "launch_commands": [],
+        "maps": [
+            "intro",
+            "map00", "map01", "map02", "map03", "map04", "map05", "map06", "map07", "map08", "map09",
+            "map10", "map11", "map12", "map13", "map14", "map15", "map16", "map17", "map18", "map19",
+                     "map21",
+        ]
+    },
+    "metadata": {
+        "name": "Doom: The Golden Souls Legacy Edition",
+        "sortname": "golden souls, the",
+        "description": "The base game file for The Ultimate DOOM.",
+        "version": "1.4",
+        "authors": ["batandy"],
+        "date": "2014-08-22",
+        "doomworld_id": "",
+        "modes": {
+            "singleplayer": true,
+            "coop": true,
+            "deathmatch": true,
+            "other": ""
+        },
+        "difficulty": true,
+        "images": {
+            "banner": "",
+            "poster": "",
+            "hero": "",
+            "wallpaper": "",
+            "logo": "",
+            "icon": ""
+        },
+        "links": {
+            "website": "https://batandy.itch.io/goldensouls",
+            "DoomWorld thread": "https://www.doomworld.com/forum/topic/69813-doom-the-golden-souls-even-more-definitive-edition-released/",
+            "Doomwiki": "https://doomwiki.org/wiki/Doom:_The_Golden_Souls"
+        }
+    }
+}
