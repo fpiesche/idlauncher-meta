@@ -9,7 +9,7 @@ jobs:
     name: Validate JSON schemas
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
@@ -20,7 +20,7 @@ jobs:
     name: Validate metadata for DOOM WADs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
@@ -31,7 +31,7 @@ jobs:
 #    name: Validate metadata for Quake mods
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/checkout@v3
+#      - uses: actions/checkout@v4
 #      - uses: actions/setup-python@v4
 #      - run: pip install -y check-jsonschema
 #      - run: check-jsonschema --schemafile ./schemas/quake.json ./meta-files/quake/*.json
